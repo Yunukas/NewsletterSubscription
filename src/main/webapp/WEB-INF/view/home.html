@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Subscribe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></head>
+<body>
+
+<h1>Subscribe to our newsletter service:</h1>
+<form class="form-inline" th:action="@{/subscribe}" th:object="${user}" method="GET">
+    <div class="form-group">
+        <input type="text" class="form-control" th:field="*{firstName}" placeholder="First Name" />
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" th:field="*{lastName}" placeholder="Last Name"/>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" th:field="*{email}" placeholder="Email"/>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-warning" type="reset">Reset</button>
+</form>
+<br/>
+
+<h1>Unsubscribe from our newsletter service:</h1>
+<form class="form-inline" th:action="@{/unsubscribe}" th:object="${user}" method="GET">
+    <div class="form-group">
+        <input type="text" id="deletemail" th:field="*{email}" placeholder="Email"/>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-warning" type="reset">Reset</button>
+</form>
+
+
+<!--
+<h1>List of users:</h1>
+
+
+
+<table th:each="user:${users}">
+
+    <tr><td th:text="${user.firstName}"></td><td th:text="${user.lastName}"><td th:text="${user.email}"></td></tr>
+</table>
+-->
+
+</body>
+</html>
