@@ -1,3 +1,3 @@
 # NewsletterSubscription
 ### Purpose
-    - [ ] A simple email subscription service created with Spring framework.
+   - [ ] A simple email subscription service created with Spring framework.
